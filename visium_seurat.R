@@ -1,5 +1,6 @@
 #https://satijalab.org/seurat/articles/spatial_vignette.html
 
+#install.packages("devtools")
 #devtools::install_github('satijalab/seurat-data')
 #install.packages("Rfast2")
 library(Seurat)
