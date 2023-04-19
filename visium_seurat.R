@@ -58,3 +58,14 @@ top.features <- head(SpatiallyVariableFeatures(brain, selection.method = "morans
 SpatialFeaturePlot(brain, features = top.features, ncol = 3, alpha = c(0.1, 1))
 
 #Subset out anatomical regions
+cortex <- subset(brain, idents = c(1, 2, 3, 4, 6, 7))
+# now remove additional cells, use SpatialDimPlots to visualize what to remove
+# SpatialDimPlot(cortex,cells.highlight = WhichCells(cortex, expression = image_imagerow > 400
+# | image_imagecol < 150))
+cortex <- subset(cortex, anterior1_imagerow > 400 | anterior1_imagecol < 150, invert = TRUE)
+cortex <- subset(cortex, anterior1_imagerow > 275 & anterior1_imagecol > 370, invert = TRUE)
+cortex <- subset(cortex, anterior1_imagerow > 250 & anterior1_imagecol > 440, invert = TRUE)
+
+p1 <- SpatialDimPlot(cortex, crop = TRUE, label = TRUE)
+p2 <- SpatialDimPlot(cortex, crop = FALSE, label = TRUE, pt.size.factor = 1, label.size = 3)
+p1 + p2
