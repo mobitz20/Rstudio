@@ -57,6 +57,7 @@ brain <- FindSpatiallyVariableFeatures(brain, assay = "SCT", features = Variable
 top.features <- head(SpatiallyVariableFeatures(brain, selection.method = "moransi"), 6)
 SpatialFeaturePlot(brain, features = top.features, ncol = 3, alpha = c(0.1, 1))
 
+
 #Subset out anatomical regions
 cortex <- subset(brain, idents = c(1, 2, 3, 4, 6, 7))
 # now remove additional cells, use SpatialDimPlots to visualize what to remove
