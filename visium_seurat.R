@@ -1,6 +1,7 @@
 #https://satijalab.org/seurat/articles/spatial_vignette.html
 
-#install.packages("devtools")
+#remotes::install_github("satijalab/seurat", "seurat5", quiet = TRUE, lib = 'D:/Program Files/R-4.2.3/library')
+#install.packages("devtools", lib = 'D:/Program Files/R-4.2.3/library')
 #devtools::install_github('satijalab/seurat-data')
 #install.packages("Rfast2")
 library(Seurat)
@@ -8,7 +9,6 @@ library(SeuratData)
 library(ggplot2)
 library(patchwork)
 library(dplyr)
-
 
 InstallData("stxBrain")
 ?stxBrain
